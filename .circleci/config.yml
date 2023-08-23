@@ -19,13 +19,16 @@ jobs:
     steps:
       - checkout
       - run:
-          command: ./Set-CircleCiEnvironmentVariable.ps1
-          shell: pwsh
-          environment:
-            inputs: << parameters >>
-      - run:
-          command: ./test.ps1
-          shell: pwsh
+          command: gci ./ -recurse
+          shell: pwsh 
+      # - run:
+      #     command: ./Set-CircleCiEnvironmentVariable.ps1
+      #     shell: pwsh
+      #     environment:
+      #       inputs: << parameters >>
+      # - run:
+      #     command: ./test.ps1
+      #     shell: pwsh
 workflows:
   test-workflow:
     jobs:
