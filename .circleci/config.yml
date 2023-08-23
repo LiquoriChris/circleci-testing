@@ -26,9 +26,8 @@ jobs:
       #     shell: pwsh
       #     environment:
       #       inputs: << parameters.param_1 >>
-      # - run:
-      #     command: ./test.ps1
-      #     shell: pwsh
+      - run:
+          command: ./test.ps1
 workflows:
   test-workflow:
     jobs:
