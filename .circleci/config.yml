@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: gci ./ -recurse
+          command: < parameters >
           shell: pwsh 
       # - run:
       #     command: ./Set-CircleCiEnvironmentVariable.ps1
