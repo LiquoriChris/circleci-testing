@@ -1,0 +1,35 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/base:current
+    parameters:
+      param_1:
+        type: string
+      param_2:
+        type: string
+        default: ''
+      param_3:
+        type: string
+        default: ''
+      param_4:
+        type: string
+        default: ''
+    steps:
+      - checkout
+      - run:
+          command: ./Set-CircleCiEnvironmentVariable.ps1
+          shell: pwsh
+          environment:
+            inputs: << parameters >>
+      - run:
+          command: ./test.ps1
+          shell: pwsh
+workflows:
+  test-workflow:
+    jobs:
+      - test:
+          name: test1
+          param_1: test
+          
