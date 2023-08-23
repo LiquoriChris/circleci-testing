@@ -28,6 +28,12 @@ jobs:
       #       inputs: << parameters.param_1 >>
       - run:
           command: ./test.ps1
+          environment:
+            param_1: << parameters.param_1 >>
+            param_2: << parameters.param_2 >>
+            param_3: << parameters.param_3 >>
+            param_4: << parameters.param_4 >>
+            
 workflows:
   test-workflow:
     jobs:
