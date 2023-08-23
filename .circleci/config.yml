@@ -20,14 +20,12 @@ jobs:
         default: ''
     steps:
       - checkout
-      - run:
-          command: < parameters >
-          shell: pwsh 
+      - run: Get-Variable
       # - run:
       #     command: ./Set-CircleCiEnvironmentVariable.ps1
       #     shell: pwsh
       #     environment:
-      #       inputs: << parameters >>
+      #       inputs: << parameters.param_1 >>
       # - run:
       #     command: ./test.ps1
       #     shell: pwsh
